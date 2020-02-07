@@ -1,20 +1,45 @@
 /* Siple colum and row in each row should be flex-grow summary 12 */
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+* {
+  box-sizing: border-box;
 }
 
-@for $i  from  1 through 12 {
-  .col-#{$i} {
-    flex-grow: $i;
-    flex-basis: 0;
-    flex-shrink: 1;
-  }
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media(max-width: 767px) {
+  @include grid('sm');
+}
+
+@media(min-width: 768px) {
+  @include grid('md');
+}
+
+@media(min-width: 992px) {
+  @include grid('lg');
+}
+
+@media(min-width: 1200px) {
+  @include grid('xl');
 }
 
 /*Basic structure*/
-.full-menu {
+.menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +48,7 @@
   background-color: $color-bg-menu;
 }
 
-.top {
+.top-bar {
   position: fixed;
   top: 0;
   left: 188px;
@@ -32,17 +57,17 @@
   background-color: $color-bg-main;
 }
 
-.container {
-  margin: 60px 0 0 0;
+.main {
+  margin-top: 60px;
+  height: calc(100vh - 60px);
   background-color: $color-bg-back;
-  padding: 18px;  
-  min-height: calc(100vh - 60px);
+
+  &--full-menu {
+    margin-left: 188px;
+  }
+ 
+  &--short-menu {
+    margin-left: 54px;
+  }
 }
 
-.container--full-menu {
-  margin-left: 188px;
-}
-
-.container--short-menu {
-  margin-left: 54px;
-}

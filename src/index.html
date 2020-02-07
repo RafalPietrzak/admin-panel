@@ -7,13 +7,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Style guide</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div id="app-wrapper">
-
     </div>
+
+    <script id="template-layout" type="text/x-handlebars-template">
+        <div>
+            <div id="top-bar" class="top-bar"></div>
+            <div id="menu" class="menu"></div>
+            <div id="main" class = "main  main--full-menu"></div>
+        </div>
+    </script>
+
+    <script id="template-page-global" type="text/x-handlebars-template">
+        <div id={{ this }} class="container page">
+        </div>
+    </script>
+    
+    <script id="template-section-basic" type="text/x-handlebars-template">
+    <div id="{{ id }}" class="section-basic">
+        <div class="section-basic__row">
+            <h2 class="section-basic__header">
+                {{ title }}
+            </h2>
+        </div>
+        {{#each rows}}
+            <div id={{ this }} class="section-basic__row">
+            </div>
+        {{/each}} 
+    </div>
+    </script>
+    <script id="template-component-data-scope-form" type="text/x-handlebars-template">
+      <form class = "data-scope">
+          <label class="data-scope_label">{{ label1 }}</label>
+          <input type="text" name="data1" class="data-scope_input">
+          <label class="data-scope_label">{{ label2 }}</label>
+          <input type="text" name="data1" class="data-scope_input">
+          <button type="submit" class="button">
+              <i></i>
+          </button>
+      </form>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="js/app.js" type="module"></script>
 </body>
 
