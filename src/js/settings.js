@@ -121,7 +121,12 @@ const section = {
     settings: {
 
     },
-  },    
+  },
+  sideBar: {
+    select: {
+      template: '#template-section-side-bar'
+    }
+  }    
 };
 section.basic.template = Handlebars.compile(
   document.querySelector(section.basic.select.template).innerHTML

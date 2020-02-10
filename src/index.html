@@ -18,7 +18,7 @@
     <script id="template-layout" type="text/x-handlebars-template">
         <div>
             <div id="top-bar" class="top-bar"></div>
-            <div id="menu" class="menu"></div>
+            <div id="side-bar-wrapper" class="menu"></div>
             <div id="main" class = "main  main--full-menu"></div>
         </div>
     </script>
@@ -52,6 +52,18 @@
           </button>
       </form>
     </script>
+    <script id="template-section-side-bar" type="text/x-handlebars-template">
+        <div class="side-bar">
+            <div class="side-bar__header">
+                <div class="side-bar__logo"></div>
+                <div class="side-bar__menu-button"></div>
+            </div>
+            <div id="side-bar__menu-wraper">
+            </div>
+            <div id="side-bar__top-bar-wrapper">
+            </div>
+        </div>
+      </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="js/app.js" type="module"></script>
