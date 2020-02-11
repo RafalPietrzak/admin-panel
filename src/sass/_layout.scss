@@ -24,14 +24,30 @@
 
 @media(max-width: 767px) {
   @include grid('sm');
+  .main {
+    height: calc(100vh);
+    background-color: $color-bg-back;
+  }
 }
 
 @media(min-width: 768px) {
   @include grid('md');
+  .main {
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    background-color: $color-bg-back;
+    margin-left: 50px;
+  }
 }
 
 @media(min-width: 992px) {
   @include grid('lg');
+  .main {
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+    background-color: $color-bg-back;
+    margin-left: 188px;
+  }
 }
 
 @media(min-width: 1200px) {
@@ -39,35 +55,5 @@
 }
 
 /*Basic structure*/
-.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 188px;
-  background-color: $color-bg-menu;
-}
 
-.top-bar {
-  position: fixed;
-  top: 0;
-  left: 188px;
-  height: 60px;
-  width: calc(100vw - 188px);
-  background-color: $color-bg-main;
-}
-
-.main {
-  margin-top: 60px;
-  height: calc(100vh - 60px);
-  background-color: $color-bg-back;
-
-  &--full-menu {
-    margin-left: 188px;
-  }
- 
-  &--short-menu {
-    margin-left: 54px;
-  }
-}
 

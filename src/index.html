@@ -8,6 +8,7 @@
     <title>Style guide</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="vendor/fontello-a495ff57/css/fontello.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,7 +19,7 @@
     <script id="template-layout" type="text/x-handlebars-template">
         <div>
             <div id="top-bar" class="top-bar"></div>
-            <div id="side-bar-wrapper" class="menu"></div>
+            <div id="side-bar-wrapper"></div>
             <div id="main" class = "main  main--full-menu"></div>
         </div>
     </script>
@@ -55,15 +56,32 @@
     <script id="template-section-side-bar" type="text/x-handlebars-template">
         <div class="side-bar">
             <div class="side-bar__header">
-                <div class="side-bar__logo"></div>
+                <div class="side-bar__logo">{{ logo }}</div>
                 <div class="side-bar__menu-button"></div>
             </div>
-            <div id="side-bar__menu-wraper">
+            <div id="side-bar__menu-wrapper">
             </div>
             <div id="side-bar__top-bar-wrapper">
             </div>
         </div>
-      </script>
+    </script>
+    <script id="template-componet-menu" type="text/x-handlebars-template">
+        <div class="menu">
+            <ul class="menu_list">
+            {{#each links}}
+                <li class="menu_item">
+                    <a href="{{ link }}" class="menu_link">
+                        <i class="{{ icon }} menu_icon">
+                        </i> 
+                        <p class="menu_title"> 
+                            {{ linkTitle }}
+                        </p>
+                    </a>
+                </li>
+            {{/each}}
+            </ul>    
+        </div>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="js/app.js" type="module"></script>

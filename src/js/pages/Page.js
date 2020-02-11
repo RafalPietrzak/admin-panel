@@ -8,6 +8,8 @@ class Page {
     thisPage.settings = settings;
     thisPage.id = thisPage.settings.select.id.replace('#','');
     thisPage.title = settings.title;
+    thisPage.icon =  settings.icon;
+    thisPage.iconName =  settings.iconName;
     thisPage.init();
     thisPage.initSection();
   }

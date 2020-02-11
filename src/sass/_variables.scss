@@ -4,12 +4,14 @@ $color-text-contra: #ffffff;
 $color-text-dark: #333333;
 $color-text-light: #a6a6a6;
 $color-header: #979797;
+$color-text-menu: #999999;
 
 //Bacground or border color
 $color-bg-main: #ffffff;
 $color-bg-back: #f5f5f2;
 $color-bg-menu: #191919;
 $color-bg-menu-hover: #282828;
+$color-bg-menu-after: #f58220;
 $color-bg-box: #e3e3e3; //message, tabs, border   
 $color-bg-box2: #bababa; //message, border:hover
 $color-bg-confirm: #04ae00;
@@ -33,10 +35,10 @@ $color-shadow: rgba(0, 0, 0, 0.3);
 
 /* Font */
 $font-size-base: 14px;
-$font-size-header: 1.14 rem;
-$font-size-text: 1 rem; //paragraph, form
-$font-size-small: 0.78 rem; //table body
-
+$font-size-header: 1.14rem;
+$font-size-text: 1rem; //paragraph, form
+$font-size-small: 0.78rem; //table body
+$font-size-menu: 1.2rem;
 $font-family: 'Roboto', sans-serif;
 $font-light: 300;
 $font-normal: 400;

@@ -40,6 +40,8 @@ const page = {
       id: '#general',
     },
     title: 'General',
+    icon: 'icon-general',
+    iconName: 'icon general',
     sections:{
       statistic: {
         rows: ['dateSelector', 'dataDisplay' ],
@@ -56,10 +58,12 @@ const page = {
       id: '#baner',
     },
     title: 'Baners',
+    icon: 'icon-banners',
+    iconName: 'icon braners',
     sections:{
       statistic: {
-        rows: ['dateSelector', 'dataDisplay' ],
-        title: 'General statistic',
+        rows: ['Baner', 'Baner'],
+        title: 'Baner',
       },
       links: {
         rows: ['linkDisplay' ],
@@ -72,6 +76,8 @@ const page = {
       id: '#details',
     },
     title: 'Details',
+    icon: 'icon-details',
+    iconName: 'icon details',
     sections:{
       statistic: {
         rows: ['dateSelector', 'dataDisplay','pagination' ],
@@ -83,16 +89,25 @@ const page = {
     select: {
       id: '#links',
     },
+    title: 'Links',
+    icon: 'icon-links',
+    iconName: 'icon links',
   },
   payout: {
     select: {
       id: '#payout',
     },
+    title: 'Payout',
+    icon: 'icon-peyout',
+    iconName: 'icon peyout',
   },
   personalData: {
     select: {
       id: '#personal-data',
     },
+    title: 'Personal Data',
+    icon: 'icon-personaldata',
+    iconName: 'icon personal data',
   },
 };
 page.global.template = Handlebars.compile(
@@ -112,7 +127,7 @@ const section = {
       template: '#template-section-basic',
       element: {
         title: '.section-basic__header',
-        row: 'section-basic__row'
+        row: '.section-basic__row'
       }
     },
     classNames: {
@@ -124,33 +139,41 @@ const section = {
   },
   sideBar: {
     select: {
-      template: '#template-section-side-bar'
+      template: '#template-section-side-bar',
+      wrapper: '#side-bar-wrapper',
+      menuWrapper: '#side-bar__menu-wrapper',
+      topBarWrapper: '#side-bar__top-bar-wrapper',
+      menuButton: '.side-bar__menu-button',
     }
   }    
 };
 section.basic.template = Handlebars.compile(
   document.querySelector(section.basic.select.template).innerHTML
 );
+section.sideBar.template = Handlebars.compile(
+  document.querySelector(section.sideBar.select.template).innerHTML
+);
 export const sectionBasic = section.basic;
+export const sectionSideBar = section.sideBar;
 
 const component = {
-  general: {
+  menu: {
     select: {
-      template: '',
-      wrapper: '',
-      element: {
-        
-      }
+      template: '#template-componet-menu',
+      link: '.menu_link', 
     },
     classNames: {
-
+      active: 'menu_link--active',
     },
     settings: {
 
     },
   },    
 };
-export const componentGeneral = component.general;
+component.menu.template = Handlebars.compile(
+  document.querySelector(component.menu.select.template).innerHTML
+);
+export const componentMenu = component.menu;
 
 
 

@@ -1,0 +1,38 @@
+@media(max-width: 767px) {
+  .side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $color-bg-menu;
+    display: none;
+  }
+}
+
+@media(min-width: 768px) {
+  .side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50px;
+    background-color: $color-bg-menu;
+    overflow: hidden;
+  }
+}
+
+@media(min-width: 992px) {
+  .side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 188px;
+    background-color: $color-bg-menu;
+  }
+}
+
+@media(min-width: 1200px) {
+
+}

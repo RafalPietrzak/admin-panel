@@ -4,10 +4,12 @@
 @import 'layout';
 
 /* Components */
-//@import "components/form_field";
+@import "components/menu";
 
 /* Sections */
 @import './sections/section-basic';
+@import './sections/side-bar';
+@import './sections/top-bar';
 
 /* Pages / Views */
 @import "pages/page"

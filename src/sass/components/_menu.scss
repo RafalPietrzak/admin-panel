@@ -1,0 +1,45 @@
+.menu {
+  
+  &_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &_link {
+    display: flex;
+    height: 40px;
+    color: $color-text-menu;  
+    font-family: $font-family;
+    font-weight: $font-normal;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+    font-size: $font-size-menu;
+  }
+
+  &_title {
+    margin: auto 0 auto 15px;
+  }
+
+  &_link--active{
+    background-color: $color-bg-menu-hover;
+    color: $color-text-contra;  
+    position: relative;
+  }
+  &_link--active::after {
+    content: "";
+    background-color: $color-bg-menu-after;
+    display: box;
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    left: 1px;
+    top: 1px;
+    z-index: 999;
+  }
+
+  &_icon {
+    font-size: $font-size-menu;
+    margin: auto 0 auto 15px;
+  }
+}
