@@ -22,8 +22,8 @@ global.template = Handlebars.compile(
 );
 export const globalSelect = global.select;
 export const globalClassName = global.classNames;
-export const globalSettings = global.settings; 
-export const globalTemplate = global.template; 
+export const globalSettings = global.settings;
+export const globalTemplate = global.template;
 
 const page = {
   global: {
@@ -42,13 +42,13 @@ const page = {
     title: 'General',
     icon: 'icon-general',
     iconName: 'icon general',
-    sections:{
+    sections: {
       statistic: {
-        rows: ['dateSelector', 'dataDisplay' ],
+        rows: ['dateSelector', 'dataDisplay'],
         title: 'General statistic',
       },
       links: {
-        rows: ['linkDisplay' ],
+        rows: ['linkDisplay'],
         title: 'Links',
       }
     }
@@ -60,13 +60,13 @@ const page = {
     title: 'Baners',
     icon: 'icon-banners',
     iconName: 'icon braners',
-    sections:{
+    sections: {
       statistic: {
         rows: ['Baner', 'Baner'],
         title: 'Baner',
       },
       links: {
-        rows: ['linkDisplay' ],
+        rows: ['linkDisplay'],
         title: 'Links',
       }
     }
@@ -78,9 +78,9 @@ const page = {
     title: 'Details',
     icon: 'icon-details',
     iconName: 'icon details',
-    sections:{
+    sections: {
       statistic: {
-        rows: ['dateSelector', 'dataDisplay','pagination' ],
+        rows: ['dateSelector', 'dataDisplay', 'pagination'],
         title: 'Detail statistic',
       }
     }
@@ -145,7 +145,7 @@ const section = {
       topBarWrapper: '#side-bar__top-bar-wrapper',
       menuButton: '.side-bar__menu-button',
     }
-  }    
+  }
 };
 section.basic.template = Handlebars.compile(
   document.querySelector(section.basic.select.template).innerHTML
@@ -160,15 +160,15 @@ const component = {
   menu: {
     select: {
       template: '#template-componet-menu',
-      link: '.menu_link', 
+      link: '.menu__link',
     },
     classNames: {
-      active: 'menu_link--active',
+      active: 'menu__link--active',
     },
     settings: {
 
     },
-  },    
+  },
 };
 component.menu.template = Handlebars.compile(
   document.querySelector(component.menu.select.template).innerHTML

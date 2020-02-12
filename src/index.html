@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Style guide</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="vendor/fontello-a495ff57/css/fontello.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Style guide</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="vendor/fontello-a495ff57/css/fontello.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="app-wrapper">
-    </div>
+  <div id="app-wrapper">
+  </div>
 
-    <script id="template-layout" type="text/x-handlebars-template">
+  <script id="template-layout" type="text/x-handlebars-template">
         <div>
             <div id="top-bar" class="top-bar"></div>
             <div id="side-bar-wrapper"></div>
@@ -24,12 +24,12 @@
         </div>
     </script>
 
-    <script id="template-page-global" type="text/x-handlebars-template">
+  <script id="template-page-global" type="text/x-handlebars-template">
         <div id={{ this }} class="container page">
         </div>
     </script>
-    
-    <script id="template-section-basic" type="text/x-handlebars-template">
+
+  <script id="template-section-basic" type="text/x-handlebars-template">
     <div id="{{ id }}" class="section-basic">
         <div class="section-basic__row">
             <h2 class="section-basic__header">
@@ -42,7 +42,7 @@
         {{/each}} 
     </div>
     </script>
-    <script id="template-component-data-scope-form" type="text/x-handlebars-template">
+  <script id="template-component-data-scope-form" type="text/x-handlebars-template">
       <form class = "data-scope">
           <label class="data-scope_label">{{ label1 }}</label>
           <input type="text" name="data1" class="data-scope_input">
@@ -53,11 +53,15 @@
           </button>
       </form>
     </script>
-    <script id="template-section-side-bar" type="text/x-handlebars-template">
+  <script id="template-section-side-bar" type="text/x-handlebars-template">
         <div class="side-bar">
             <div class="side-bar__header">
                 <div class="side-bar__logo">{{ logo }}</div>
-                <div class="side-bar__menu-button"></div>
+                <div class="side-bar__menu-button">
+                  <div class="side-bar__hamburger"></div>
+                  <div class="side-bar__hamburger"></div>
+                  <div class="side-bar__hamburger"></div>
+                </div>
             </div>
             <div id="side-bar__menu-wrapper">
             </div>
@@ -65,15 +69,15 @@
             </div>
         </div>
     </script>
-    <script id="template-componet-menu" type="text/x-handlebars-template">
+  <script id="template-componet-menu" type="text/x-handlebars-template">
         <div class="menu">
-            <ul class="menu_list">
+            <ul class="menu__list">
             {{#each links}}
-                <li class="menu_item">
-                    <a href="{{ link }}" class="menu_link">
-                        <i class="{{ icon }} menu_icon">
+                <li class="menu__item">
+                    <a href="{{ link }}" class="menu__link">
+                        <i class="{{ icon }} menu__icon">
                         </i> 
-                        <p class="menu_title"> 
+                        <p class="menu__title"> 
                             {{ linkTitle }}
                         </p>
                     </a>
@@ -82,9 +86,9 @@
             </ul>    
         </div>
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="js/app.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="js/app.js" type="module"></script>
 </body>
 
 </html>

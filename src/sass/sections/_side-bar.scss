@@ -1,12 +1,47 @@
+.side-bar {
+  &__menu-button {
+  height: 35px;
+  width: 35px;
+  padding: 5px 5px 0 5px;
+  margin: auto 20px;
+  }
+  
+  &__hamburger {
+    background-color: $color-text-menu;
+    height: 4px;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  &__logo {
+    height: 35px;
+    margin: auto 20px;
+  }
+
+  &__header {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+  }
+}
+
 @media(max-width: 767px) {
   .side-bar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100vw;
+    width: 0;
     background-color: $color-bg-menu;
-    display: none;
+    overflow: hidden;
+
+    &__header {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
   }
 }
 
@@ -33,6 +68,6 @@
   }
 }
 
-@media(min-width: 1200px) {
+// @media(min-width: 1200px) {
 
-}
+// }
