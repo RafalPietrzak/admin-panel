@@ -20,6 +20,7 @@
   
   &__column--2 {
     width: 180px;
+    flex-grow: 1;
   }
 
   &__wallet-value {
@@ -77,12 +78,14 @@
     position: fixed;
     bottom: 0;
     left: -100%;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     &__column {
       padding: 15px;
-     }
+    }
   }
+
   .side-bar--full .top-bar {
     left: 0;
   }
