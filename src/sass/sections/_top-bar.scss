@@ -1,8 +1,106 @@
 .top-bar {
-  position: fixed;
-  top: 0;
-  left: 188px;
-  height: 60px;
-  width: calc(100vw - 188px);
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  transition: $transition;
   background-color: $color-bg-main;
+    
+  &__line-notification-wrapper {
+    position: fixed;
+    top: 60px;
+    left: 0;
+  }
+
+  &__column {
+    width: 60px;
+    border-left: $box-border;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  
+  &__column--2 {
+    width: 180px;
+  }
+
+  &__wallet-value {
+    font-size: $font-size-menu;
+    color: $color-text-menu;
+    font-weight: $font-medium;
+    margin: auto;
+  }
+
+  &__profile-name {
+    font-size: $font-size-text;
+    color: $color-link;
+    font-weight: $font-medium;
+    margin: auto;
+  }
+
+  &__button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 0;
+  }
+  
+  &__icon {
+    color: $color-text-menu;
+    font-size: $font-size-menu;
+    margin: auto;
+    position: relative;
+  }
+
+  &__icon--small {
+    font-size: $font-size-menu * 0.6;
+  }
+
+
+  &__icon--notification::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: -2px;
+    left: 13px;
+    background-color: none;
+    border-radius: 50%;
+    border: 1px solid $color-text-menu;
+  }
+
+  &__icon--notification-signal::after {
+    background-color: $color-bg-menu-after;
+  }
 }
+
+@media(max-width: 767px) {
+  .side-bar .top-bar {
+    position: fixed;
+    bottom: 0;
+    left: -100%;
+    justify-content: flex-start;
+
+    &__column {
+      padding: 15px;
+     }
+  }
+  .side-bar--full .top-bar {
+    left: 0;
+  }
+}
+
+@media(min-width: 768px) {
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 55px;
+    width: calc(100% - 55px);
+    height: 60px;
+    background-color: $color-bg-main;
+  }
+
+  .side-bar--full .top-bar {
+    left: 188px;
+    width: calc(100% - 188px);
+  }
+}
+

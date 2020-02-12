@@ -5,13 +5,12 @@ const global = {
     template: '#template-layout',
     wrapper: '#app-wrapper',
     element: {
-      menuWrapper: '#menu',
       topBarWrapper: '#top-bar',
       contentWrapper: '#main'
     }
   },
   classNames: {
-
+    mainFullMenu: 'main--full-menu',
   },
   settings: {
 
@@ -144,8 +143,25 @@ const section = {
       menuWrapper: '#side-bar__menu-wrapper',
       topBarWrapper: '#side-bar__top-bar-wrapper',
       menuButton: '.side-bar__menu-button',
+    },
+    settings: {
+      logo: 'images/logo.png'
+    },
+    classNames: {
+      sideBarFull: 'side-bar--full',
+    }
+  },
+  topBar: {
+    select: {
+      template: '#template-section-top-bar',
+      lineNotificationWraper: '.top-bar__line-notification-wrapper',
+      waletWrapper: '#top-bar__walet-wrapper',
+      notificationWrapper: '#top-bar__notification-wrapper',
+      profileWrapper: '#top-bar__profile-wrapper',
+      exitButton: '.top-bar__exit-button',
     }
   }
+
 };
 section.basic.template = Handlebars.compile(
   document.querySelector(section.basic.select.template).innerHTML
@@ -153,8 +169,12 @@ section.basic.template = Handlebars.compile(
 section.sideBar.template = Handlebars.compile(
   document.querySelector(section.sideBar.select.template).innerHTML
 );
+section.topBar.template = Handlebars.compile(
+  document.querySelector(section.topBar.select.template).innerHTML
+);
 export const sectionBasic = section.basic;
 export const sectionSideBar = section.sideBar;
+export const sectionTopBar = section.topBar; 
 
 const component = {
   menu: {
