@@ -1,0 +1,35 @@
+.button{
+  background-color: $color-button;
+  height: 40px;
+  border-radius: $radius;
+  display: flex;
+  padding: 0 15px;
+ 
+  &:hover {
+    background-color: $color-button-hover;
+  }
+
+  &__label-icon {
+    font-size: 0;
+    margin: auto;
+    width: 40px;
+  }
+  
+  &__icon {
+    color: $color-text-contra;
+    font-size: $font-size-menu;
+  }
+  
+  &__label {
+    color: $color-text-contra;
+    font-weight: $font-light;
+    font-size: $font-size-menu;
+    font-family: $font-family;
+    margin: auto;
+    
+  }
+
+  &--center-block{
+    margin: auto;
+  }
+}

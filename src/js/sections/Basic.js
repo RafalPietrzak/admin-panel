@@ -11,7 +11,7 @@ class Basic {
   init(rowsId){
     const thisBasic = this;
     thisBasic.dom = {};
-    thisBasic.rows = {};
+    thisBasic.dom.rows = {};
     const rowSelectors = thisBasic.generateRowsId(rowsId);
     const options = {
       id: thisBasic.id,
@@ -21,10 +21,8 @@ class Basic {
     const generateHTML = sectionBasic.template(options);
     thisBasic.dom.element = utils.createDOMFromHTML(generateHTML);
     for(let rowId in rowsId){
-      thisBasic.rows[rowId] = {};
-      thisBasic.rows[rowId].dom = {};
-      thisBasic.rows[rowId].dom.element = thisBasic.dom.element.querySelector(
-        rowSelectors[rowId]
+      thisBasic.dom.rows[rowsId[rowId]] = thisBasic.dom.element.querySelector(
+        '#' + rowSelectors[rowId]
       );
     }
   }
@@ -32,7 +30,7 @@ class Basic {
     const thisBasic = this;
     const newRowsId = [];
     for(let rowId in rowsId){
-      newRowsId.push('#' + thisBasic.id + '-' + rowsId[rowId]);
+      newRowsId.push(thisBasic.id + '-' + rowsId[rowId]);
     }
     return newRowsId;  
   }

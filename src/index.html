@@ -37,7 +37,7 @@
             </h2>
         </div>
         {{#each rows}}
-            <div id={{ this }} class="section-basic__row">
+            <div id={{ this }} class = "section-basic__row">
             </div>
         {{/each}} 
     </div>
@@ -120,6 +120,19 @@
            </div>         
         </div>
     </script>
+    <script id="template-component-button" type="text/x-handlebars-template">
+        <div id="{{ id }}"  class="button {{ className }}">
+            {{#if icon}}
+                <div class="button__label-icon">
+                    <i class="{{ className }} button__icon"></i>
+                    {{ label }}
+                </div>
+            {{/if}}
+            {{#if label}}
+                <p class="button__label">{{ label }}</p>
+            {{/if}}
+        </div>
+    </script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="js/app.js" type="module"></script>

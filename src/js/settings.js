@@ -42,11 +42,11 @@ const page = {
     icon: 'icon-general',
     iconName: 'icon general',
     sections: {
-      statistic: {
+      generalStatistic: {
         rows: ['dateSelector', 'dataDisplay'],
         title: 'General statistic',
       },
-      links: {
+      generalLinks: {
         rows: ['linkDisplay'],
         title: 'Links',
       }
@@ -60,14 +60,10 @@ const page = {
     icon: 'icon-banners',
     iconName: 'icon braners',
     sections: {
-      statistic: {
+      baners: {
         rows: ['Baner', 'Baner'],
         title: 'Baner',
       },
-      links: {
-        rows: ['linkDisplay'],
-        title: 'Links',
-      }
     }
   },
   details: {
@@ -91,6 +87,12 @@ const page = {
     title: 'Links',
     icon: 'icon-links',
     iconName: 'icon links',
+    sections: {
+      addLinks: {
+        rows: ['addNew1', 'tableLinks', 'addNew2'],
+        title: 'Links',
+      }
+    }
   },
   payout: {
     select: {
@@ -189,11 +191,24 @@ const component = {
 
     },
   },
+  button: {
+    select: {
+      template: '#template-component-button',
+    },
+    classNames: {
+      center: 'button--center-block',
+    }
+  }
 };
 component.menu.template = Handlebars.compile(
   document.querySelector(component.menu.select.template).innerHTML
 );
+component.button.template = Handlebars.compile(
+  document.querySelector(component.button.select.template).innerHTML
+);
 export const componentMenu = component.menu;
+export const componentButton = component.button;
+
 
 
 
