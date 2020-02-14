@@ -11,31 +11,27 @@ class Page {
     thisPage.icon =  settings.icon;
     thisPage.iconName =  settings.iconName;
     thisPage.init();
-    thisPage.initSection();
   }
-  addSection(section, rows, title){
+  addSection(section, title){
     const thisPage = this;
-    thisPage.section[section] = new Basic(section, rows, title);
-    thisPage.dom.element.appendChild(thisPage.section[section].dom.element);
+    thisPage.sections[section] = new Basic(section, title);
+    thisPage.dom.element.appendChild(thisPage.sections[section].dom.element);
+    thisPage.sections[section].rows = {};
+  }
+  addRow(section, row, option = '') {
+    const thisPage = this;
+    thisPage.sections[section].rows[row] = thisPage.sections[section].addRow(
+      row, option
+    );
   }
   init(){
     const thisPage = this;
     thisPage.dom = {};
-    thisPage.section = {};
+    thisPage.sections = {};
     thisPage.dom.wrapper = document.querySelector(pageGlobal.select.wrapper);
     const generateHTML = pageGlobal.template(thisPage.id);
     thisPage.dom.element = utils.createDOMFromHTML(generateHTML);
     thisPage.dom.wrapper.appendChild(thisPage.dom.element);
-  }
-  initSection(){
-    const thisPage = this;
-    for(let section in thisPage.settings.sections){
-      thisPage.addSection(
-        section, 
-        thisPage.settings.sections[section].rows, 
-        thisPage.settings.sections[section].title
-      );   
-    }
   }
   activeIfTrue(value){
     const thisPage = this;

@@ -129,6 +129,11 @@ const section = {
       element: {
         title: '.section-basic__header',
         row: '.section-basic__row'
+      },
+    },
+    row: {
+      select: {
+        template: '#template-section-basic-row'
       }
     },
     classNames: {
@@ -168,6 +173,9 @@ const section = {
 section.basic.template = Handlebars.compile(
   document.querySelector(section.basic.select.template).innerHTML
 );
+section.basic.row.template = Handlebars.compile(
+  document.querySelector(section.basic.row.select.template).innerHTML
+);
 section.sideBar.template = Handlebars.compile(
   document.querySelector(section.sideBar.select.template).innerHTML
 );
@@ -198,6 +206,11 @@ const component = {
     classNames: {
       center: 'button--center-block',
     }
+  },
+  simpleTable: {
+    select: {
+      template: '#template-component-simple-table',
+    },
   }
 };
 component.menu.template = Handlebars.compile(
@@ -206,8 +219,13 @@ component.menu.template = Handlebars.compile(
 component.button.template = Handlebars.compile(
   document.querySelector(component.button.select.template).innerHTML
 );
+component.simpleTable.template = Handlebars.compile(
+  document.querySelector(component.simpleTable.select.template).innerHTML
+);
+
 export const componentMenu = component.menu;
 export const componentButton = component.button;
+export const componentSimpleTable = component.simpleTable;
 
 
 

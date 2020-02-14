@@ -1,6 +1,7 @@
 import {pageLinks} from '../settings.js';
 import Page from './Page.js';
 import Button from '../components/Button.js';
+import SimpleTable from '../components/SimpleTable.js';
 
 class Links extends Page {
   constructor() {
@@ -28,26 +29,26 @@ class Links extends Page {
   addComponents() {
     const thisLinks = this;
     thisLinks.components = {};
-    thisLinks.dom.rows = {};
-    thisLinks.dom.rows.addNew1 = thisLinks.section.addLinks.dom.rows.addNew1;
-    thisLinks.dom.rows.addNew2 = thisLinks.section.addLinks.dom.rows.addNew2;  
+    thisLinks.addSection('addLinks',  'Add Links');
+    thisLinks.addRow('addLinks','addNew1');
+    thisLinks.addRow('addLinks','linkTable');
+    thisLinks.addRow('addLinks','addNew2');
     thisLinks.components.buttonAddNew1 = new Button(
       '+ Add new', 
       undefined, 
       ['center']
     );
-    thisLinks.dom.rows.addNew1.appendChild(
-      thisLinks.components.buttonAddNew1.dom.element
+    thisLinks.sections.addLinks.rows.addNew1.addComponent(
+      thisLinks.components.buttonAddNew1
     );
     thisLinks.components.buttonAddNew2 = new Button(
       '+ Add new', 
       undefined, 
       ['center']
     );
-    thisLinks.dom.rows.addNew2.appendChild(
-      thisLinks.components.buttonAddNew2.dom.element
+    thisLinks.sections.addLinks.rows.addNew2.addComponent(
+      thisLinks.components.buttonAddNew2
     );
-
   }
 }
 

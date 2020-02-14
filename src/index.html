@@ -28,7 +28,6 @@
         <div id={{ this }} class="container page">
         </div>
     </script>
-
     <script id="template-section-basic" type="text/x-handlebars-template">
     <div id="{{ id }}" class="section-basic">
         <div class="section-basic__row">
@@ -36,11 +35,10 @@
                 {{ title }}
             </h2>
         </div>
-        {{#each rows}}
-            <div id={{ this }} class = "section-basic__row">
-            </div>
-        {{/each}} 
     </div>
+    </script>
+    <script id="template-section-basic-row" type="text/x-handlebars-template">
+        <div id="{{id}}" class="section-basic__row"> </div>
     </script>
     <script id="template-component-data-scope-form" type="text/x-handlebars-template">
       <form class = "data-scope">
@@ -131,6 +129,27 @@
             {{#if label}}
                 <p class="button__label">{{ label }}</p>
             {{/if}}
+        </div>
+    </script> 
+    <script id="template-component-simple-table" type="text/x-handlebars-template">
+        <div class="simple-table">
+            <table class="simple-table__table">
+                <thead>
+                    <tr>
+                        {{#each theadName}}
+                        <th>{{ this }}</th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each rows}}
+                    <tr>
+                        {{#each cols}}
+                            <td>{{ this }}</td>
+                        {{/each}}
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>

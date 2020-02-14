@@ -2,29 +2,44 @@ import {sectionBasic} from '../settings.js';
 import {utils} from '../utils.js';
 
 class Basic {
-  constructor(sectionId, rowsId, sectionTitle) {
+  constructor(sectionId, sectionTitle) {
     const thisBasic = this;
     thisBasic.id = sectionId;
     thisBasic.sectionTitle = sectionTitle;
-    thisBasic.init(rowsId);
+    thisBasic.init();
   }
-  init(rowsId){
+  init(){
     const thisBasic = this;
     thisBasic.dom = {};
     thisBasic.dom.rows = {};
-    const rowSelectors = thisBasic.generateRowsId(rowsId);
     const options = {
       id: thisBasic.id,
       title: thisBasic.sectionTitle,
-      rows: rowSelectors
     };
     const generateHTML = sectionBasic.template(options);
     thisBasic.dom.element = utils.createDOMFromHTML(generateHTML);
-    for(let rowId in rowsId){
-      thisBasic.dom.rows[rowsId[rowId]] = thisBasic.dom.element.querySelector(
-        '#' + rowSelectors[rowId]
-      );
+  }
+  addRow(rowId, option) {
+    const thisBasic = this;
+    const options = {
+      class: option,
+      id: thisBasic.generateRowsId(rowId),
     }
+    const generateHTML = sectionBasic.row.template(options);
+    thisBasic.dom.rows[rowId] = utils.createDOMFromHTML(generateHTML);
+    thisBasic.dom.element.appendChild(thisBasic.dom.rows[rowId]);
+    return {
+      addComponent: function (component) {
+        thisBasic.dom.rows[rowId].appendChild(component.dom.element);
+        console.log( component.dom.element);
+      },
+      disabled: function () {
+        console.log('row was disabled id:' + rowId);
+      },
+      hiden: function () {
+        console.log('row was hidean id:' + rowId);
+      }
+    };
   }
   generateRowsId(rowsId) {
     const thisBasic = this;

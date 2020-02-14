@@ -1,8 +1,8 @@
 
 import Layout from './Layout.js';
 import General from './pages/General.js';
-import Baners from './pages/Baners.js';
-import Details from './pages/Details.js';
+// import Baners from './pages/Baners.js';
+// import Details from './pages/Details.js';
 import Links from './pages/Links.js';
 import SideBar from './sections/SideBar.js';
 import Menu from './components/Menu.js';
@@ -13,8 +13,8 @@ const app = {
     const thisApp = this;
     thisApp.pages = {
       general: new General(),
-      baners: new Baners(),
-      details: new Details(),
+      //baners: new Baners(),
+      //details: new Details(),
       links: new Links(),
     };
     thisApp.initMenu();
