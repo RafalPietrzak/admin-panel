@@ -1,0 +1,46 @@
+.simple-table {
+  width: 100%;
+
+  &__table {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+
+  &__thead {
+    display: none;
+  }
+
+  &__row {
+    width: 100%;
+    border-bottom: $box-border;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  &__tbody {
+    width: 100%;
+  }
+  
+  &__td {
+    padding: 15px 0;
+  }
+
+  &__td--link {
+    text-align: left;
+    overflow: hidden;
+    flex-shrink: 1;
+  }
+  
+  &__td--title {
+    text-align: left;
+    overflow: hidden;
+  }
+
+  &__td--icon {
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

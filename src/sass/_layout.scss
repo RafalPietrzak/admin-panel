@@ -20,12 +20,13 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .main {
   margin-top: 60px;
   padding-top: 1px;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   background-color: $color-bg-back;
   position: relative;
   z-index: 0;

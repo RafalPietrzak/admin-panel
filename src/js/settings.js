@@ -41,16 +41,6 @@ const page = {
     title: 'General',
     icon: 'icon-general',
     iconName: 'icon general',
-    sections: {
-      generalStatistic: {
-        rows: ['dateSelector', 'dataDisplay'],
-        title: 'General statistic',
-      },
-      generalLinks: {
-        rows: ['linkDisplay'],
-        title: 'Links',
-      }
-    }
   },
   baners: {
     select: {

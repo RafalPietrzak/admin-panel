@@ -13,6 +13,7 @@ class Links extends Page {
   }
   getData() {
     const thisLinks = this;
+    thisLinks.data={};
     thisLinks.data.links = [
       {id: 1, title: 'Home page', link: 'http://www.homepage.com'},
       {id: 2, title: 'Currently offer', link: 'http://www.currently.com'},
@@ -25,14 +26,20 @@ class Links extends Page {
       {id: 9, title: 'Piece of Wine', link: 'http://www.pieceofwine.com'},
       {id: 10, title: 'Twitter', link: 'http://www.twitter.com'},
     ];
+    const options = {
+      theadName: ['titles','links', 'actions'],
+      theadClass: '',
+      rows: thisLinks.data.links,
+    };
+    return options;
   }
   addComponents() {
     const thisLinks = this;
     thisLinks.components = {};
     thisLinks.addSection('addLinks',  'Add Links');
-    thisLinks.addRow('addLinks','addNew1');
-    thisLinks.addRow('addLinks','linkTable');
-    thisLinks.addRow('addLinks','addNew2');
+    thisLinks.sections.addLinks.addRow('addNew1');
+    thisLinks.sections.addLinks.addRow('linkTable');
+    thisLinks.sections.addLinks.addRow('addNew2');
     thisLinks.components.buttonAddNew1 = new Button(
       '+ Add new', 
       undefined, 
@@ -48,6 +55,12 @@ class Links extends Page {
     );
     thisLinks.sections.addLinks.rows.addNew2.addComponent(
       thisLinks.components.buttonAddNew2
+    );
+    thisLinks.components.sipleTable = new SimpleTable(
+      thisLinks.getData()
+    );
+    thisLinks.sections.addLinks.rows.linkTable.addComponent(
+      thisLinks.components.sipleTable
     );
   }
 }

@@ -2,9 +2,9 @@ import {componentSimpleTable} from '../settings.js';
 import {utils} from '../utils.js';
 
 class SimpleTable {
-  constructor(data){
+  constructor(options){
     const thisSimpleTable = this;
-    thisSimpleTable.data = data;
+    thisSimpleTable.options = options;
     thisSimpleTable.init();
   }
   init(){

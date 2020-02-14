@@ -132,22 +132,26 @@
         </div>
     </script> 
     <script id="template-component-simple-table" type="text/x-handlebars-template">
-        <div class="simple-table">
+        <div class="simple-table ">
             <table class="simple-table__table">
-                <thead>
+                <thead class="simple-table__thead">
                     <tr>
                         {{#each theadName}}
-                        <th>{{ this }}</th>
+                        <th>{{this}}</th>
                         {{/each}}
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="simple-table__tbody">
                     {{#each rows}}
-                    <tr>
-                        {{#each cols}}
-                            <td>{{ this }}</td>
-                        {{/each}}
+                    <tr rowId={{id}} class="simple-table__row" >
+                        <td class="col-sm-4 col-md-5 simple-table__td simple-table__td--title">{{title}}</td>
+                        <td class="col-sm-6 col-md-6 simple-table__td simple-table__td--link">{{link}}</td>
+                        <td class="col-sm-2 col-md-1 simple-table__td simple-table__td--icon">
+                            <i class="icon-links" ></i>
+                            <i class="icon-trash" ></i>
+                        </td>
                     </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>

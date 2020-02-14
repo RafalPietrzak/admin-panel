@@ -12,6 +12,7 @@ class Basic {
     const thisBasic = this;
     thisBasic.dom = {};
     thisBasic.dom.rows = {};
+    thisBasic.rows = {};
     const options = {
       id: thisBasic.id,
       title: thisBasic.sectionTitle,
@@ -24,30 +25,28 @@ class Basic {
     const options = {
       class: option,
       id: thisBasic.generateRowsId(rowId),
-    }
+    };
     const generateHTML = sectionBasic.row.template(options);
     thisBasic.dom.rows[rowId] = utils.createDOMFromHTML(generateHTML);
     thisBasic.dom.element.appendChild(thisBasic.dom.rows[rowId]);
-    return {
+    thisBasic.rows[rowId] = {
       addComponent: function (component) {
         thisBasic.dom.rows[rowId].appendChild(component.dom.element);
         console.log( component.dom.element);
       },
       disabled: function () {
+        //TODO
         console.log('row was disabled id:' + rowId);
       },
       hiden: function () {
+        //TODO
         console.log('row was hidean id:' + rowId);
       }
     };
   }
-  generateRowsId(rowsId) {
+  generateRowsId(rowId) {
     const thisBasic = this;
-    const newRowsId = [];
-    for(let rowId in rowsId){
-      newRowsId.push(thisBasic.id + '-' + rowsId[rowId]);
-    }
-    return newRowsId;  
+    return thisBasic.id + '-' + rowId;
   }
 }
 

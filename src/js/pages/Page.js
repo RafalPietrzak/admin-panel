@@ -16,13 +16,6 @@ class Page {
     const thisPage = this;
     thisPage.sections[section] = new Basic(section, title);
     thisPage.dom.element.appendChild(thisPage.sections[section].dom.element);
-    thisPage.sections[section].rows = {};
-  }
-  addRow(section, row, option = '') {
-    const thisPage = this;
-    thisPage.sections[section].rows[row] = thisPage.sections[section].addRow(
-      row, option
-    );
   }
   init(){
     const thisPage = this;
