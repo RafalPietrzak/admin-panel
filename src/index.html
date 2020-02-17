@@ -43,12 +43,9 @@
     <script id="template-component-data-scope-form" type="text/x-handlebars-template">
       <form class = "data-scope">
           <label class="data-scope_label">{{ label1 }}</label>
-          <input type="text" name="data1" class="data-scope_input">
+          <input type="text" name="date1" class="data-scope_input">
           <label class="data-scope_label">{{ label2 }}</label>
-          <input type="text" name="data1" class="data-scope_input">
-          <button type="submit" class="button">
-              <i></i>
-          </button>
+          <input type="text" name="date2" class="data-scope_input">
       </form>
     </script>
     <script id="template-section-side-bar" type="text/x-handlebars-template">
@@ -122,8 +119,8 @@
         <div id="{{ id }}"  class="button {{ className }}">
             {{#if icon}}
                 <div class="button__label-icon">
-                    <i class="{{ className }} button__icon"></i>
-                    {{ label }}
+                    <i class="{{ icon.className }} button__icon"></i>
+                    {{ icon.label }}
                 </div>
             {{/if}}
             {{#if label}}
@@ -132,7 +129,7 @@
         </div>
     </script> 
     <script id="template-component-simple-table" type="text/x-handlebars-template">
-        <div class="simple-table ">
+        <div class="simple-table {{className}}">
             <table class="simple-table__table">
                 <thead class="simple-table__thead">
                     <tr>
@@ -145,7 +142,7 @@
                     {{#each rows}}
                     <tr rowId={{id}} class="simple-table__row" >
                         <td class="col-sm-4 col-md-5 simple-table__td simple-table__td--title">{{title}}</td>
-                        <td class="col-sm-6 col-md-6 simple-table__td simple-table__td--link">{{link}}</td>
+                        <td class="col-sm-6 col-md-6 simple-table__td simple-table__td--link">{{value}}</td>
                         <td class="col-sm-2 col-md-1 simple-table__td simple-table__td--icon">
                             <i class="icon-links" ></i>
                             <i class="icon-trash" ></i>

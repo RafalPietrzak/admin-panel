@@ -201,6 +201,13 @@ const component = {
     select: {
       template: '#template-component-simple-table',
     },
+  },
+  dataScope: {
+    select: {
+      template: '#template-component-data-scope-form',
+      input1: 'input[name="date1"]',
+      input2: 'input[name="date2"]',
+    }
   }
 };
 component.menu.template = Handlebars.compile(
@@ -212,10 +219,15 @@ component.button.template = Handlebars.compile(
 component.simpleTable.template = Handlebars.compile(
   document.querySelector(component.simpleTable.select.template).innerHTML
 );
+component.dataScope.template = Handlebars.compile(
+  document.querySelector(component.dataScope.select.template).innerHTML
+);
 
 export const componentMenu = component.menu;
 export const componentButton = component.button;
 export const componentSimpleTable = component.simpleTable;
+export const componentDataScope = component.dataScope;
+
 
 
 
