@@ -28,12 +28,12 @@
         "watch:sassprefixer": "onchange \"src/sass/**/*.scss\" -- npm run build-dev",
         "watch:copy": "onchange -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" -- copyfiles -a -u 1 {{changed}} dist",
         "publish": "npm-run-all publish:* test",
-        "publish:clean": "mkdirp doc && rm -r doc && mkdirp doc",
-        "publish:copy": "copyfiles -a -u 1 -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" doc",
-        "publish:sass": "node-sass --output-style compact -o doc/css src/sass",
-        "publish:autoprefixer": "globstar autoprefixer-cli \"doc/css/*.css\"",
+        "publish:clean": "mkdirp docs && rm -r docs && mkdirp docs",
+        "publish:copy": "copyfiles -a -u 1 -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" docs",
+        "publish:sass": "node-sass --output-style compact -o docs/css src/sass",
+        "publish:autoprefixer": "globstar autoprefixer-cli \"docs/css/*.css\"",
         "publish-dev": "npm-run-all publish-dev:sass publish:autoprefixer",
-        "publish-dev:sass": "node-sass --output-style expanded --source-map true -o doc/css src/sass"
+        "publish-dev:sass": "node-sass --output-style expanded --source-map true -o docs/css src/sass"
     },
     "keywords": [],
     "author": "",
