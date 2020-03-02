@@ -26,7 +26,14 @@
         "watch": "npm-run-all build build-dev -p watch:* server",
         "watch:browsersync": "browser-sync start --server dist --files \"dist/**/*\" --ignore \"dist/db/**/*\"",
         "watch:sassprefixer": "onchange \"src/sass/**/*.scss\" -- npm run build-dev",
-        "watch:copy": "onchange -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" -- copyfiles -a -u 1 {{changed}} dist"
+        "watch:copy": "onchange -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" -- copyfiles -a -u 1 {{changed}} dist",
+        "publish": "npm-run-all publish:* test",
+        "publish:clean": "mkdirp doc && rm -r doc && mkdirp doc",
+        "publish:copy": "copyfiles -a -u 1 -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" doc",
+        "publish:sass": "node-sass --output-style compact -o doc/css src/sass",
+        "publish:autoprefixer": "globstar autoprefixer-cli \"doc/css/*.css\"",
+        "publish-dev": "npm-run-all publish-dev:sass publish:autoprefixer",
+        "publish-dev:sass": "node-sass --output-style expanded --source-map true -o doc/css src/sass"
     },
     "keywords": [],
     "author": "",
