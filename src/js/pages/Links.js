@@ -15,21 +15,22 @@ class Links extends Page {
     const thisLinks = this;
     thisLinks.data={};
     thisLinks.data.links = [
-      {id: 1, title: 'Home page', link: 'http://www.homepage.com'},
-      {id: 2, title: 'Currently offer', link: 'http://www.currently.com'},
-      {id: 3, title: 'Blurpix', link: 'http://www.blurpix.com'},
-      {id: 4, title: 'Your Site', link: 'http://www.yoursite.com'},
-      {id: 5, title: 'Google', link: 'http://www.google.com'},
-      {id: 6, title: 'Facebook', link: 'http://www.facebook.com'},
-      {id: 7, title: 'Dashboard', link: 'http://www.dashboard.com'},
-      {id: 8, title: 'Blurax', link: 'http://www.blurax.com'},
-      {id: 9, title: 'Piece of Wine', link: 'http://www.pieceofwine.com'},
-      {id: 10, title: 'Twitter', link: 'http://www.twitter.com'},
+      {id: 1, title: 'Home page', value: 'http://www.homepage.com'},
+      {id: 2, title: 'Currently offer', value: 'http://www.currently.com'},
+      {id: 3, title: 'Blurpix', value: 'http://www.blurpix.com'},
+      {id: 4, title: 'Your Site', value: 'http://www.yoursite.com'},
+      {id: 5, title: 'Google', value: 'http://www.google.com'},
+      {id: 6, title: 'Facebook', value: 'http://www.facebook.com'},
+      {id: 7, title: 'Dashboard', value: 'http://www.dashboard.com'},
+      {id: 8, title: 'Blurax', value: 'http://www.blurax.com'},
+      {id: 9, title: 'Piece of Wine', value: 'http://www.pieceofwine.com'},
+      {id: 10, title: 'Twitter', value: 'http://www.twitter.com'},
     ];
     const options = {
       theadName: ['titles','links', 'actions'],
       theadClass: '',
       rows: thisLinks.data.links,
+      icon: true,
     };
     return options;
   }

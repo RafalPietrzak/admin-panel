@@ -38,14 +38,15 @@
     </div>
     </script>
     <script id="template-section-basic-row" type="text/x-handlebars-template">
-        <div id="{{id}}" class="section-basic__row"> </div>
+        <div id="{{id}}" class="section-basic__row section-basic__row--center"> 
+        </div>
     </script>
     <script id="template-component-data-scope-form" type="text/x-handlebars-template">
       <form class = "data-scope">
-          <label class="data-scope_label">{{ label1 }}</label>
-          <input type="text" name="date1" class="data-scope_input">
-          <label class="data-scope_label">{{ label2 }}</label>
-          <input type="text" name="date2" class="data-scope_input">
+          <label class="data-scope__label">{{ label1 }}</label>
+          <input type="text" name="date1" class="data-scope__input">
+          <label class="data-scope__label">{{ label2 }}</label>
+          <input type="text" name="date2" class="data-scope__input">
       </form>
     </script>
     <script id="template-section-side-bar" type="text/x-handlebars-template">
@@ -129,7 +130,8 @@
         </div>
     </script> 
     <script id="template-component-simple-table" type="text/x-handlebars-template">
-        <div class="simple-table {{className}}">
+         {{#if icon}}
+        <div class="simple-table {{className}} col-sm-12 col-md-10">
             <table class="simple-table__table">
                 <thead class="simple-table__thead">
                     <tr>
@@ -142,19 +144,44 @@
                     {{#each rows}}
                     <tr rowId={{id}} class="simple-table__row" >
                         <td class="col-sm-4 col-md-5 simple-table__td simple-table__td--title">{{title}}</td>
-                        <td class="col-sm-6 col-md-6 simple-table__td simple-table__td--link">{{value}}</td>
-                        <td class="col-sm-2 col-md-1 simple-table__td simple-table__td--icon">
-                            <i class="icon-links" ></i>
-                            <i class="icon-trash" ></i>
+                        <td class="col-sm-6 col-md-5 simple-table__td simple-table__td--link">{{value}}</td>
+                        <td class="col-sm-2 col-md-2 simple-table__td simple-table__td--icon">
+                            <i class="icon-links simple-table__icon" ></i>
+                            <i class="icon-trash simple-table__icon" ></i>
                         </td>
                     </tr>
                     {{/each}}
                 </tbody>
             </table>
         </div>
+        {{else}}
+        <div class="simple-table {{className}}">
+            <table class="simple-table__table">
+                <thead class="simple-table__thead">
+                    <tr>
+                        {{#each theadName}}
+                        <th>{{this}}</th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody class="simple-table__tbody">
+                    {{#each rows}}
+                    <tr rowId={{id}} class="simple-table__row" >
+                        <td class="col-sm-5 col-md-3 simple-table__td simple-table__td--title">{{title}}</td>
+                        <td class="col-sm-5 col-md-2 simple-table__td simple-table__td--link">{{value}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{/if}}
+    </script> 
+    <script id="template-component-chart" type="text/x-handlebars-template">
+        <canvas id={{id}} class="col-md-8"></canvas>
     </script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="js/app.js" type="module"></script>
 </body>
 

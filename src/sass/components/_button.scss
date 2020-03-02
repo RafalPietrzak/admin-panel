@@ -3,7 +3,8 @@
   height: 40px;
   border-radius: $radius;
   display: flex;
-  padding: 0 15px;
+  padding: 0 10px;
+  margin: 0 10px;
  
   &:hover {
     background-color: $color-button-hover;
@@ -11,8 +12,8 @@
 
   &__label-icon {
     font-size: 0;
-    margin: auto;
-    width: 40px;
+    margin: auto 0;
+    text-align: center;
   }
   
   &__icon {

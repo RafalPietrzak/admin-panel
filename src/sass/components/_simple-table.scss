@@ -1,10 +1,9 @@
 .simple-table {
-  width: 100%;
-
+  margin: 0 20px;
+  
   &__table {
-    width: 100%;
-    max-width: 700px;
     margin: auto;
+    width: 100%;
   }
 
   &__thead {
@@ -19,12 +18,16 @@
     justify-content: space-between;
   }
 
+  &__row:hover {
+    background-color: $color-bg-box2;
+  }
+
   &__tbody {
     width: 100%;
   }
   
   &__td {
-    padding: 15px 0;
+    padding: 15px 10px;
   }
 
   &__td--link {
@@ -42,5 +45,10 @@
     flex-shrink: 0;
     display: flex;
     flex-wrap: nowrap;
+  }
+  
+  &__icon {
+    margin: auto 10px; 
+    
   }
 }

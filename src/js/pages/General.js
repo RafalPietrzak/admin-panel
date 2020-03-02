@@ -3,6 +3,7 @@ import Page from './Page.js';
 import Button from '../components/Button.js';
 import SimpleTable from '../components/SimpleTable.js';
 import DataScope from '../components/DataScope.js';
+import MyChart from '../components/MyChart.js';
 
 
 class General extends Page {
@@ -32,6 +33,7 @@ class General extends Page {
       theadName: ['titles','links', 'actions'],
       theadClass: '',
       rows: thisLinks.data.links,
+      icon: true,
     };
     return options;
   }
@@ -75,6 +77,18 @@ class General extends Page {
     );
     thisGeneral.sections.statistic.rows.dataDisplay.addComponent(
       thisGeneral.components.statisticTable2 
+    );
+    thisGeneral.sections.statistic.addRow('chart');
+    thisGeneral.components.chart = new MyChart('my-chart');
+    thisGeneral.sections.statistic.rows.chart.addComponent(
+      thisGeneral.components.chart
+    );
+    thisGeneral.components.chart.displayData(
+      {
+        signups: [ 52, 51, 41, 94, 26, 6, 72, 9, 21, 88 ],
+        ftd: [ 6, 72, 1, 0, 47, 11, 50, 44, 63, 76 ],
+        earned: [ 59, 49, 68, 90, 67, 41, 13, 38, 48, 48 ],
+      }
     );
     thisGeneral.addSection('addLinks', 'Links');
     thisGeneral.sections.addLinks.addRow('addNew1');

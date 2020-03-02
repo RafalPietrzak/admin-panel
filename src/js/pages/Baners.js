@@ -30,6 +30,7 @@ class Baners extends Page {
       theadName: ['titles','links', 'actions'],
       theadClass: '',
       rows: thisBaners.data.links,
+      icon: true,
     };
     return options;
   }

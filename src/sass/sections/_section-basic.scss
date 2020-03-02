@@ -17,6 +17,11 @@
     border-bottom: $box-border;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__row--center {
+    justify-content: center;
   }
 
   &__description {
